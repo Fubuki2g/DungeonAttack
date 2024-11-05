@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1136669920b5774795ec7307fc168e1, type: 3}
+  m_Name: SEManager
+  m_EditorClassIdentifier: 
+  DataList:
+  - SEName: Attack
+    AudioClip: {fileID: 8300000, guid: bf7537f9ae336fa48b2a5bded52fe26c, type: 3}
+  - SEName: PowerAttack
+    AudioClip: {fileID: 8300000, guid: 0131910e709ba194d84dd36180b4f97e, type: 3}
+  - SEName: PowerCharge
+    AudioClip: {fileID: 8300000, guid: 46ac69086a9502e418c26e355922541f, type: 3}
+  - SEName: Healing
+    AudioClip: {fileID: 8300000, guid: 7b757bce19ba22946abc5471ff87e9e6, type: 3}
+  - SEName: FireBall
+    AudioClip: {fileID: 8300000, guid: f534aed284f594142b457876fb535386, type: 3}
+  - SEName: IceLance
+    AudioClip: {fileID: 8300000, guid: 4762307f2b97dcb499a1780fbcfbeb34, type: 3}
+  - SEName: Bomb
+    AudioClip: {fileID: 8300000, guid: 866a7b22680747047b8afd9f862a2ac0, type: 3}
+  - SEName: Damage
+    AudioClip: {fileID: 8300000, guid: cbf0b298dc4eb1a49a76a703a1354a9e, type: 3}
+  - SEName: EnemySpecialAttack
+    AudioClip: {fileID: 8300000, guid: 0131910e709ba194d84dd36180b4f97e, type: 3}
+  - SEName: Scythe
+    AudioClip: {fileID: 8300000, guid: 37aad291891ae4f4faa6787813dba800, type: 3}
+  - SEName: Tornado
+    AudioClip: {fileID: 8300000, guid: 0131910e709ba194d84dd36180b4f97e, type: 3}
+  - SEName: Thunder
+    AudioClip: {fileID: 8300000, guid: 8eecf9a1b697b814d9bc339c46a536e8, type: 3}
+  - SEName: Breath
+    AudioClip: {fileID: 8300000, guid: d39835db1eade1245972b0158e3752ff, type: 3}
+  - SEName: Auro
+    AudioClip: {fileID: 8300000, guid: 67cb66cb4fcfe184f94478391a574d2b, type: 3}
+  - SEName: Lightning
+    AudioClip: {fileID: 8300000, guid: 29fef6cfc82c43d45ac006c548eda103, type: 3}
+  - SEName: Select
+    AudioClip: {fileID: 8300000, guid: 52f0abafffb017b4791e1e0b65fd55a9, type: 3}
+  - SEName: Back
+    AudioClip: {fileID: 8300000, guid: a66369f092a6ef149ab9feb2c78dac3f, type: 3}
+  - SEName: StageChange
+    AudioClip: {fileID: 8300000, guid: 72edfbebfe91a9942a21b60f8b22a3e1, type: 3}
+  - SEName: Pause
+    AudioClip: {fileID: 8300000, guid: 9a63ad041ccf27b499d0b8df52d28392, type: 3}
+  - SEName: Win
+    AudioClip: {fileID: 8300000, guid: 9a8fe19899fa1b94194d20bfb933e398, type: 3}
+  - SEName: LvUp
+    AudioClip: {fileID: 8300000, guid: 6c0d2f01055f9994fbcf915def9d5128, type: 3}
+  - SEName: ItemGet
+    AudioClip: {fileID: 8300000, guid: 8ba23d3d46ebe744e9d59cc4eae64428, type: 3}
+  - SEName: StatusDown
+    AudioClip: {fileID: 8300000, guid: 8ddd6c1e26f36f54885f0519d89f2402, type: 3}
+  - SEName: Lose
+    AudioClip: {fileID: 8300000, guid: e70c5225caf11564bbe0836a250c1e43, type: 3}

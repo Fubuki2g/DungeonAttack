@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad89c1bd1f1c5f4492c2a93486ca0db, type: 3}
+  m_Name: SkillValueManager
+  m_EditorClassIdentifier: 
+  DataList:
+  - skillName: "\u30D1\u30EF\u30FC\u30A2\u30BF\u30C3\u30AF"
+    needSkillValue: 5
+    skillValue: 1.5
+  - skillName: "\u30D1\u30EF\u30FC\u30C1\u30E3\u30FC\u30B8"
+    needSkillValue: 10
+    skillValue: 0
+  - skillName: "\u7791\u60F3"
+    needSkillValue: 20
+    skillValue: 50
+  - skillName: "\u30D5\u30A1\u30A4\u30A2\u30DC\u30FC\u30EB"
+    needSkillValue: 3
+    skillValue: 15
+  - skillName: "\u30A2\u30A4\u30B9\u30E9\u30F3\u30B9"
+    needSkillValue: 7
+    skillValue: 30
+  - skillName: "\u30D2\u30FC\u30EB"
+    needSkillValue: 10
+    skillValue: 30

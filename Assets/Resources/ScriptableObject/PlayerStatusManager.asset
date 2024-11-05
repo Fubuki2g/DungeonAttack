@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c71fb72b10933849ae5d16bc9804fc6, type: 3}
+  m_Name: PlayerStatusManager
+  m_EditorClassIdentifier: 
+  DataList:
+  - pNAME: "\u6226\u58EB"
+    pLv: 1
+    pHP: 30
+    pSP: 0
+    pATK: 5
+    skillSlot: 000000000100000002000000
+  - pNAME: "\u9B54\u6CD5\u4F7F\u3044"
+    pLv: 1
+    pHP: 15
+    pSP: 15
+    pATK: 1
+    skillSlot: 030000000400000005000000

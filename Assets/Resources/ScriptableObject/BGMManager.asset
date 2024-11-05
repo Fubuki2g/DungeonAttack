@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da07c63dceab2db43ae33caa7efe312f, type: 3}
+  m_Name: BGMManager
+  m_EditorClassIdentifier: 
+  DataList:
+  - BGMName: Title
+    AudioClip: {fileID: 8300000, guid: 7d0794868b8ebb8488fe6cfd802d6bc0, type: 3}
+  - BGMName: StageEasy
+    AudioClip: {fileID: 8300000, guid: 26b83ba8b2bbb2445ad2ae45f52072fe, type: 3}
+  - BGMName: StageNormal
+    AudioClip: {fileID: 8300000, guid: 78c0d57f76e35a944a9d7d1bb77da8c7, type: 3}
+  - BGMName: Battle
+    AudioClip: {fileID: 8300000, guid: 7bc6354ff3d88c54f832c9116b71d793, type: 3}
+  - BGMName: StrongBattle
+    AudioClip: {fileID: 8300000, guid: 992602c5574bbdb4291e7c22ad7fc7ee, type: 3}
+  - BGMName: BossBattle
+    AudioClip: {fileID: 8300000, guid: 8fe2fb58cc13305468ae6d64dac5d7d5, type: 3}
+  - BGMName: GameOver
+    AudioClip: {fileID: 8300000, guid: b5e694474ca19414183ca08da1e9226d, type: 3}
+  - BGMName: GameClear
+    AudioClip: {fileID: 8300000, guid: 197bc5aec09d9af4aa5d45622efcb652, type: 3}
+  - BGMName: EventFountain
+    AudioClip: {fileID: 8300000, guid: ef3baa31b9594af4889920e93d8490af, type: 3}
+  - BGMName: EventMagic
+    AudioClip: {fileID: 8300000, guid: 9726d540387bd6b46a3b253d95924c5f, type: 3}
+  - BGMName: EventMuscle
+    AudioClip: {fileID: 8300000, guid: 007884d177b135148ab69207757cf39a, type: 3}
+  - BGMName: Shop
+    AudioClip: {fileID: 8300000, guid: 25cb3b87e39e71d43bf373519dbef4e3, type: 3}
+  - BGMName: Treasure
+    AudioClip: {fileID: 8300000, guid: 3a323ee4776aeab4a92602d0e0abdf98, type: 3}
+  - BGMName: Rest
+    AudioClip: {fileID: 8300000, guid: 4aa757c0a4494e545853a459d09144b2, type: 3}

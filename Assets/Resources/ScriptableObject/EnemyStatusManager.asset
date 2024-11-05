@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6ad08f94b41c942ae952e488e6d468, type: 3}
+  m_Name: EnemyStatusManager
+  m_EditorClassIdentifier: 
+  DataList:
+  - eNAME: "\u30B9\u30E9\u30A4\u30E0"
+    eLv: 1
+    eHP: 5
+    eATK: 1
+    eEXP: 10
+    skillValue1: 0
+    skillValue2: 5
+    skillValue3: 0
+  - eNAME: "\u30A4\u30B1\u30D0\u30C3\u30C8"
+    eLv: 1
+    eHP: 10
+    eATK: 2
+    eEXP: 10
+    skillValue1: 5
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u5E3D\u5B50\u304A\u5316\u3051"
+    eLv: 1
+    eHP: 15
+    eATK: 1
+    eEXP: 10
+    skillValue1: 7
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u6B7B\u795E"
+    eLv: 3
+    eHP: 25
+    eATK: 5
+    eEXP: 30
+    skillValue1: 10
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u30BF\u30C4\u30DE\u30AD"
+    eLv: 3
+    eHP: 30
+    eATK: 3
+    eEXP: 30
+    skillValue1: 10
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u96F7\u592A\u90CE"
+    eLv: 3
+    eHP: 20
+    eATK: 7
+    eEXP: 30
+    skillValue1: 12
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u7D05\u84EE\u8776"
+    eLv: 5
+    eHP: 30
+    eATK: 10
+    eEXP: 50
+    skillValue1: 15
+    skillValue2: 5
+    skillValue3: 0
+  - eNAME: "\u30C0\u30FC\u30AF\u30C9\u30E9\u30B4\u30F3"
+    eLv: 5
+    eHP: 60
+    eATK: 5
+    eEXP: 50
+    skillValue1: 10
+    skillValue2: 15
+    skillValue3: 0
+  - eNAME: "\u30A2\u30A4\u30B9\u30C9\u30E9\u30B4\u30F3"
+    eLv: 5
+    eHP: 50
+    eATK: 7
+    eEXP: 50
+    skillValue1: 10
+    skillValue2: 15
+    skillValue3: 0
+  - eNAME: "\u30D9\u30D3\u30FC\u30C9\u30E9\u30B4\u30F3"
+    eLv: 3
+    eHP: 30
+    eATK: 5
+    eEXP: 30
+    skillValue1: 10
+    skillValue2: 5
+    skillValue3: 0
+  - eNAME: "\u30E9\u30A4\u30C8\u30C9\u30E9\u30B4\u30F3"
+    eLv: 10
+    eHP: 120
+    eATK: 12
+    eEXP: 100
+    skillValue1: 15
+    skillValue2: 20
+    skillValue3: 30
