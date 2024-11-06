@@ -78,6 +78,10 @@ public class SkillManager : Singleton<SkillManager>
         useSkillButton[(int)enumSkillButton.Skill1].SetActive(false);
         useSkillButton[(int)enumSkillButton.Skill2].SetActive(false);
         useSkillButton[(int)enumSkillButton.Skill3].SetActive(false);
+        if (PlayerPrefs.GetInt("Character") == (int)TitleManager.enumCharacterID.Magician)
+        {
+            useSkillButton[(int)enumSkillButton.Skill1].SetActive(true);
+        }
 
         BattleManager.Instance.windows[(int)BattleManager.enumWindows.SkillWindow].SetActive(false);
 

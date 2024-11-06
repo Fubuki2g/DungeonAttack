@@ -24,7 +24,7 @@ MonoBehaviour:
     skillValue: 50
   - skillName: "\u30D5\u30A1\u30A4\u30A2\u30DC\u30FC\u30EB"
     needSkillValue: 3
-    skillValue: 15
+    skillValue: 10
   - skillName: "\u30A2\u30A4\u30B9\u30E9\u30F3\u30B9"
     needSkillValue: 7
     skillValue: 30

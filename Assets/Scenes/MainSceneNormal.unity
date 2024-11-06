@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainText: {fileID: 0}
   floorNumberText: {fileID: 0}
-  floorNumber: 0
+  floorNumber: 6
   maxFloorNumber: 10
   floorImage: {fileID: 0}
   floorSprite: {fileID: 21300000, guid: 03d472cd8667cf8499c2f5f25c8a4171, type: 3}
@@ -12989,7 +12989,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 213963501}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
-        m_MethodName: Back
+        m_MethodName: SkillBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

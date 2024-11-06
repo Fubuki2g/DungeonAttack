@@ -100,8 +100,8 @@ public class GameManager : Singleton<GameManager>
             floorIconImage.sprite = floorIconSprite[(int)enumFloorIconSprite.BattleFloor];
             yield return StartCoroutine(BattleManager.Instance.BattleStart());
         }
-        // 偶数フロアかつ全体の半分以上進んでいるか、イージーステージではない場合は以下からランダム
-        else if (floorNumber < maxFloorNumber&& floorNumber > maxFloorNumber/2 && floorNumber % 2 == 0 || PlayerPrefs.GetInt("Difficulty") != (int)TitleManager.enumDifficultyID.Easy)
+        // 偶数フロアかつ全体の半分以上進んでいるかつ、イージーステージではない場合は以下からランダム
+        else if (floorNumber < maxFloorNumber&& floorNumber > maxFloorNumber/2 && floorNumber % 2 == 0 && PlayerPrefs.GetInt("Difficulty") != (int)TitleManager.enumDifficultyID.Easy)
         {
             IEnumerator[] coroutines = new IEnumerator[]
             {

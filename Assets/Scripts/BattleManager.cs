@@ -124,7 +124,7 @@ public class BattleManager: Singleton<BattleManager>
     public bool itemUse; // アイテムコマンドを表示
     public bool skillBack; // スキルコマンド表示から戻る
 
-    void Start()
+    void Awake()
     {
         // ScriptableObjectの読み込み
         enemyStatusManager = Resources.Load<EnemyStatusManager>("ScriptableObject/EnemyStatusManager");
@@ -241,21 +241,35 @@ public class BattleManager: Singleton<BattleManager>
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
 
         // 選択した難易度か進行状況で敵を変える
-        nowEnemySprite = new Sprite[] { enemySprite[(int)enumEnemySprite.Slime], enemySprite[(int)enumEnemySprite.IkeBat], enemySprite[(int)enumEnemySprite.HatGhost] };
-        int randomNumber = Random.Range(0, nowEnemySprite.Length);
         if (GameManager.Instance.floorNumber > GameManager.Instance.maxFloorNumber / 2 && PlayerPrefs.GetInt("Difficulty") >= 1)
         {
+            nowEnemySprite = new Sprite[] { enemySprite[(int)enumEnemySprite.GodADeath], enemySprite[(int)enumEnemySprite.Tornado], enemySprite[(int)enumEnemySprite.ThunderOni] };
+            int randomNumber = Random.Range(0, nowEnemySprite.Length);
+            Sprite selectedSprite = nowEnemySprite[randomNumber];
+            displayEnemyImage.sprite = selectedSprite;
             randomNumber += 3;
+            enemyName = enemyStatusManager.DataList[randomNumber].eNAME;
+            enemyLv = enemyStatusManager.DataList[randomNumber].eLv;
+            enemyHP = enemyStatusManager.DataList[randomNumber].eHP;
+            enemyMaxHP = enemyStatusManager.DataList[randomNumber].eHP;
+            enemyATK = enemyStatusManager.DataList[randomNumber].eATK;
+            enemyEXP = enemyStatusManager.DataList[randomNumber].eEXP;
+            enemyStatusText[(int)enumEnemyStatusText.Name].text = enemyName;
         }
-        Sprite selectedSprite = nowEnemySprite[randomNumber];
-        displayEnemyImage.sprite = selectedSprite;
-        enemyName = enemyStatusManager.DataList[randomNumber].eNAME;
-        enemyLv = enemyStatusManager.DataList[randomNumber].eLv;
-        enemyHP = enemyStatusManager.DataList[randomNumber].eHP;
-        enemyMaxHP = enemyStatusManager.DataList[randomNumber].eHP;
-        enemyATK = enemyStatusManager.DataList[randomNumber].eATK;
-        enemyEXP = enemyStatusManager.DataList[randomNumber].eEXP;
-        enemyStatusText[(int)enumEnemyStatusText.Name].text = enemyName;
+        else
+        {
+            nowEnemySprite = new Sprite[] { enemySprite[(int)enumEnemySprite.Slime], enemySprite[(int)enumEnemySprite.IkeBat], enemySprite[(int)enumEnemySprite.HatGhost] };
+            int randomNumber = Random.Range(0, nowEnemySprite.Length);
+            Sprite selectedSprite = nowEnemySprite[randomNumber];
+            displayEnemyImage.sprite = selectedSprite;
+            enemyName = enemyStatusManager.DataList[randomNumber].eNAME;
+            enemyLv = enemyStatusManager.DataList[randomNumber].eLv;
+            enemyHP = enemyStatusManager.DataList[randomNumber].eHP;
+            enemyMaxHP = enemyStatusManager.DataList[randomNumber].eHP;
+            enemyATK = enemyStatusManager.DataList[randomNumber].eATK;
+            enemyEXP = enemyStatusManager.DataList[randomNumber].eEXP;
+            enemyStatusText[(int)enumEnemyStatusText.Name].text = enemyName;
+        }
 
         mainText.text = $"{enemyName}が現れた！";
 
@@ -675,6 +689,21 @@ public class BattleManager: Singleton<BattleManager>
                 playerATK += 2;
                 playerEXP = 0;
                 playerNextLvEXP *= 2;
+
+                if (playerLv >= 2)
+                {
+                    SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill1].SetActive(true);
+                }
+
+                if (playerLv >= 4)
+                {
+                    SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
+                }
+
+                if (playerLv >= 6)
+                {
+                    SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
+                }
             }
             else if (PlayerPrefs.GetInt("Character") == (int)TitleManager.enumCharacterID.Magician)
             {
@@ -684,21 +713,16 @@ public class BattleManager: Singleton<BattleManager>
                 playerATK += 1;
                 playerEXP = 0;
                 playerNextLvEXP *= 2;
-            }
 
-            if (playerLv >= 2)
-            {
-                SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill1].SetActive(true);
-            }
+                if (playerLv >= 4)
+                {
+                    SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
+                }
 
-            if (playerLv >= 4)
-            {
-                SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
-            }
-
-            if (playerLv >= 6)
-            {
-                SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
+                if (playerLv >= 6)
+                {
+                    SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
+                }
             }
 
             yield return StartCoroutine(NextProcess(1.0f));
