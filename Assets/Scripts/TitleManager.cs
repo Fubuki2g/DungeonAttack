@@ -12,51 +12,49 @@ public class TitleManager : MonoBehaviour
     {
         Title, // タイトルを表示するキャンバス
         Select, // モード選択のキャンバス
+        PlayGuide, // 遊び方説明のキャンバス
         Stage, // ステージ選択のキャンバス
         Character, // キャラクター選択のキャンバス
         Check, // 確認のキャンバス
         Num
     }
     public TextMeshProUGUI[] highestFloor; // 最高フロア表示用のテキスト
-    public enum enumHighesetFloor
-    {
-        Easy,
-        Normal,
-        Num
-    }
     public GameObject[] clearImage; // クリアの際に表示するImage
-    public enum enumClearImage
-    {
-        Easy,
-        Normal,
-        Num
-    }
     public GameObject[] defaultButton; // デフォルト選択ボタン
     public enum enumDefaultButton
     {
-        SelectButton,
-        VolumeButton,
-        StageButton,
-        CharacterButton,
-        CheckBackButton,
+        SelectButton, // モード選択のデフォルトボタン
+        VolumeButton, // 音量調節のデフォルトボタン
+        StageButton, // ステージ選択のデフォルトボタン
+        CharacterButton, // キャラクター選択のデフォルトボタン
+        CheckBackButton, // 最終確認のデフォルトボタン
         Num
     }
     public int[] characterID; // キャラクターID
     public enum enumCharacterID
     {
-        Warrior,
-        Magician,
+        Warrior, // 戦士
+        Magician, // 魔法使い
         Num
     }
     public int[] DifficultyID; // 難易度ID
     public enum enumDifficultyID
     {
-        Easy,
-        Normal,
+        Easy, // イージー
+        Normal, // ノーマル
         Num
     }
 
     public GameObject SelectWindow; // 初期選択ウィンドウ
+    public GameObject[] PlayGuideWindow; // 遊び方ウィンドウ
+    public enum enumPlayGuideWindow
+    {
+        PlayGuide, // 初期表示ウィンドウ
+        Control, // 操作説明ウィンドウ
+        Base, // 基本画面説明ウィンドウ
+        Battle, // 戦闘画面説明ウィンドウ
+        Num
+    }
     public GameObject VolumeOptionWindow; // 音量設定ウィンドウ
     public Image StageCheckImage; // ステージ選択ウィンドウ
     public Image CharacterCheckImage; // キャラクター選択ウィンドウ
@@ -71,24 +69,26 @@ public class TitleManager : MonoBehaviour
     {
         // 各配列の初期化
         canvas = new GameObject[(int)enumCanvas.Num];
-        highestFloor = new TextMeshProUGUI[(int)enumHighesetFloor.Num];
-        clearImage = new GameObject[(int)enumClearImage.Num];
+        highestFloor = new TextMeshProUGUI[(int)enumDifficultyID.Num];
+        clearImage = new GameObject[(int)enumDifficultyID.Num];
         defaultButton = new GameObject[(int)enumDefaultButton.Num];
         characterID = new int[(int)enumCharacterID.Num];
         DifficultyID = new int[(int)enumDifficultyID.Num];
+        PlayGuideWindow = new GameObject[(int)enumPlayGuideWindow.Num];
 
         // 各UIオブジェクトの読み込み
         canvas[(int)enumCanvas.Title] = GameObject.Find("TitleCanvas");
         canvas[(int)enumCanvas.Select] = GameObject.Find("SelectCanvas");
+        canvas[(int)enumCanvas.PlayGuide] = GameObject.Find("PlayGuideCanvas");
         canvas[(int)enumCanvas.Stage] = GameObject.Find("StageSelectCanvas");
         canvas[(int)enumCanvas.Character] = GameObject.Find("CharacterSelectCanvas");
         canvas[(int)enumCanvas.Check] = GameObject.Find("CheckCanvas");
 
-        highestFloor[(int)enumHighesetFloor.Easy] = GameObject.Find("EasyMaxFloor").GetComponent<TextMeshProUGUI>();
-        highestFloor[(int)enumHighesetFloor.Normal] = GameObject.Find("NormalMaxFloor").GetComponent<TextMeshProUGUI>();
+        highestFloor[(int)enumDifficultyID.Easy] = GameObject.Find("EasyMaxFloor").GetComponent<TextMeshProUGUI>();
+        highestFloor[(int)enumDifficultyID.Normal] = GameObject.Find("NormalMaxFloor").GetComponent<TextMeshProUGUI>();
 
-        clearImage[(int)enumClearImage.Easy] = GameObject.Find("EasyClear");
-        clearImage[(int)enumClearImage.Normal] = GameObject.Find("NormalClear");
+        clearImage[(int)enumDifficultyID.Easy] = GameObject.Find("EasyClear");
+        clearImage[(int)enumDifficultyID.Normal] = GameObject.Find("NormalClear");
 
         defaultButton[(int)enumDefaultButton.SelectButton] = GameObject.Find("StageSelectButton");
         defaultButton[(int)enumDefaultButton.VolumeButton] = GameObject.Find("VolumeBackButton");
@@ -96,10 +96,14 @@ public class TitleManager : MonoBehaviour
         defaultButton[(int)enumDefaultButton.CharacterButton] = GameObject.Find("WarriorButton");
         defaultButton[(int)enumDefaultButton.CheckBackButton] = GameObject.Find("NoButton");
 
-        highestFloor[(int)enumHighesetFloor.Easy].text = PlayerPrefs.GetInt("EasyClearFloor").ToString();
-        highestFloor[(int)enumHighesetFloor.Normal].text = PlayerPrefs.GetInt("NormalClearFloor").ToString();
+        highestFloor[(int)enumDifficultyID.Easy].text = PlayerPrefs.GetInt("EasyClearFloor").ToString();
+        highestFloor[(int)enumDifficultyID.Normal].text = PlayerPrefs.GetInt("NormalClearFloor").ToString();
 
         SelectWindow = GameObject.Find("SelectWindow");
+        PlayGuideWindow[(int)enumPlayGuideWindow.PlayGuide] = GameObject.Find("PlayGuide");
+        PlayGuideWindow[(int)enumPlayGuideWindow.Control] = GameObject.Find("ControlPlayGuide");
+        PlayGuideWindow[(int)enumPlayGuideWindow.Base] = GameObject.Find("BasePlayGuide");
+        PlayGuideWindow[(int)enumPlayGuideWindow.Battle] = GameObject.Find("BattlePlayGuide");
         VolumeOptionWindow = GameObject.Find("VolumeOptionWindow");
 
         StageCheckImage = GameObject.Find("StageCheckImage").GetComponent<Image>();
@@ -109,11 +113,15 @@ public class TitleManager : MonoBehaviour
 
         // 初期非表示オブジェクトを非表示
         canvas[(int)enumCanvas.Select].SetActive(false);
+        canvas[(int)enumCanvas.PlayGuide].SetActive(false);
         canvas[(int)enumCanvas.Stage].SetActive(false);
         canvas[(int)enumCanvas.Character].SetActive(false);
         canvas[(int)enumCanvas.Check].SetActive(false);
-        clearImage[(int)enumClearImage.Easy].SetActive(false);
-        clearImage[(int)enumClearImage.Normal].SetActive(false);
+        clearImage[(int)enumDifficultyID.Easy].SetActive(false);
+        clearImage[(int)enumDifficultyID.Normal].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Control].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Base].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Battle].SetActive(false);
         VolumeOptionWindow.SetActive(false);
 
         // BGMの再生
@@ -137,12 +145,12 @@ public class TitleManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("EasyClearFloor") == 5)
         {
-            clearImage[(int)enumClearImage.Easy].SetActive(true);
+            clearImage[(int)enumDifficultyID.Easy].SetActive(true);
         }
 
         if (PlayerPrefs.GetInt("NormalClearFloor") == 10)
         {
-            clearImage[(int)enumClearImage.Normal].SetActive(true);
+            clearImage[(int)enumDifficultyID.Normal].SetActive(true);
         }
 
     }
@@ -190,6 +198,44 @@ public class TitleManager : MonoBehaviour
         canvas[(int)enumCanvas.Select].SetActive(false);
         canvas[(int)enumCanvas.Stage].SetActive(true);
         EventSystem.current.SetSelectedGameObject(defaultButton[(int)enumDefaultButton.StageButton]);
+    }
+
+    public void PlayGuide()
+    {
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        canvas[(int)enumCanvas.Select].SetActive(false);
+        canvas[(int)enumCanvas.PlayGuide].SetActive(true);
+        StartCoroutine(PlayGuideViewing());
+    }
+
+    public IEnumerator PlayGuideViewing()
+    {
+        yield return StartCoroutine(NextProcess(1.0f));
+
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        PlayGuideWindow[(int)enumPlayGuideWindow.PlayGuide].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Control].SetActive(true);
+
+        yield return StartCoroutine(NextProcess(1.0f));
+
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Control].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Base].SetActive(true);
+
+        yield return StartCoroutine(NextProcess(1.0f));
+
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Base].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Battle].SetActive(true);
+
+        yield return StartCoroutine(NextProcess(1.0f));
+
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        PlayGuideWindow[(int)enumPlayGuideWindow.Battle].SetActive(false);
+        PlayGuideWindow[(int)enumPlayGuideWindow.PlayGuide].SetActive(true);
+        canvas[(int)enumCanvas.PlayGuide].SetActive(false);
+        canvas[(int)enumCanvas.Select].SetActive(true);
+        EventSystem.current.SetSelectedGameObject(defaultButton[(int)enumDefaultButton.SelectButton]);
     }
 
     // 音量調節ボタン
@@ -319,6 +365,17 @@ public class TitleManager : MonoBehaviour
         canvas[(int)enumCanvas.Character].SetActive(true);
         canvas[(int)enumCanvas.Check].SetActive(false);
         EventSystem.current.SetSelectedGameObject(defaultButton[(int)enumDefaultButton.CharacterButton]);
+    }
+
+    // コルーチン内で次の処理に移動する際のディレイの設定
+    public IEnumerator NextProcess(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        while (!Input.GetKeyDown(KeyCode.Space))
+        {
+            yield return null;
+        }
     }
 
 }
