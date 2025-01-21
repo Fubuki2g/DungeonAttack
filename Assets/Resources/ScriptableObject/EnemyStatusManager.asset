@@ -31,7 +31,7 @@ MonoBehaviour:
     skillValue3: 0
   - eNAME: "\u5E3D\u5B50\u304A\u5316\u3051"
     eLv: 1
-    eHP: 15
+    eHP: 10
     eATK: 1
     eEXP: 10
     skillValue1: 7
@@ -42,7 +42,7 @@ MonoBehaviour:
     eHP: 25
     eATK: 5
     eEXP: 30
-    skillValue1: 10
+    skillValue1: 8
     skillValue2: 0
     skillValue3: 0
   - eNAME: "\u30BF\u30C4\u30DE\u30AD"
@@ -50,7 +50,7 @@ MonoBehaviour:
     eHP: 30
     eATK: 3
     eEXP: 30
-    skillValue1: 10
+    skillValue1: 7
     skillValue2: 0
     skillValue3: 0
   - eNAME: "\u96F7\u592A\u90CE"
@@ -58,11 +58,35 @@ MonoBehaviour:
     eHP: 20
     eATK: 7
     eEXP: 30
+    skillValue1: 10
+    skillValue2: 0
+    skillValue3: 0
+  - eNAME: "\u708E\u99AC"
+    eLv: 5
+    eHP: 50
+    eATK: 10
+    eEXP: 100
     skillValue1: 12
+    skillValue2: 15
+    skillValue3: 0
+  - eNAME: "\u6C37\u82B1"
+    eLv: 5
+    eHP: 30
+    eATK: 5
+    eEXP: 100
+    skillValue1: 15
+    skillValue2: 20
+    skillValue3: 0
+  - eNAME: "\u5730\u96F7\u9B5A"
+    eLv: 5
+    eHP: 70
+    eATK: 3
+    eEXP: 100
+    skillValue1: 50
     skillValue2: 0
     skillValue3: 0
   - eNAME: "\u7D05\u84EE\u8776"
-    eLv: 5
+    eLv: 7
     eHP: 30
     eATK: 10
     eEXP: 50
@@ -70,7 +94,7 @@ MonoBehaviour:
     skillValue2: 5
     skillValue3: 0
   - eNAME: "\u30C0\u30FC\u30AF\u30C9\u30E9\u30B4\u30F3"
-    eLv: 5
+    eLv: 7
     eHP: 60
     eATK: 5
     eEXP: 50
@@ -78,7 +102,7 @@ MonoBehaviour:
     skillValue2: 15
     skillValue3: 0
   - eNAME: "\u30A2\u30A4\u30B9\u30C9\u30E9\u30B4\u30F3"
-    eLv: 5
+    eLv: 7
     eHP: 50
     eATK: 7
     eEXP: 50
@@ -100,4 +124,12 @@ MonoBehaviour:
     eEXP: 100
     skillValue1: 15
     skillValue2: 20
-    skillValue3: 30
+    skillValue3: 10
+  - eNAME: "\u72ED\u9593\u9B54\u4EBA"
+    eLv: 15
+    eHP: 200
+    eATK: 15
+    eEXP: 150
+    skillValue1: 20
+    skillValue2: 30
+    skillValue3: 20

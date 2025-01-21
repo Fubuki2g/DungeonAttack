@@ -61,3 +61,5 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 8ddd6c1e26f36f54885f0519d89f2402, type: 3}
   - SEName: Lose
     AudioClip: {fileID: 8300000, guid: e70c5225caf11564bbe0836a250c1e43, type: 3}
+  - SEName: Poison
+    AudioClip: {fileID: 8300000, guid: d03236d60753ca643847ba7f611f68b9, type: 3}

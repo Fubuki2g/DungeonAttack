@@ -25,6 +25,7 @@ public class SoundManager : Singleton<SoundManager>
         Shop,
         Treasure,
         Rest,
+        StageHard,
         Num
     }
     public int[] seNumber;Å@// SEî‘çÜ
@@ -54,6 +55,7 @@ public class SoundManager : Singleton<SoundManager>
         ItemGet,
         StatusDown,
         Lose,
+        Poison,
         Num
     }
 

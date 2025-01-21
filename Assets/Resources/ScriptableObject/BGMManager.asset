@@ -41,3 +41,5 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 3a323ee4776aeab4a92602d0e0abdf98, type: 3}
   - BGMName: Rest
     AudioClip: {fileID: 8300000, guid: 4aa757c0a4494e545853a459d09144b2, type: 3}
+  - BGMName: StageHard
+    AudioClip: {fileID: 8300000, guid: acf7ad443b729fa49aadb3ba66d9bc1d, type: 3}

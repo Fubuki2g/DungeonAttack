@@ -73,6 +73,10 @@ public class GameManager : Singleton<GameManager>
         {
             SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageNormal);
         }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Hard)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageHard);
+        }
         yield return StartCoroutine(NextFloor());
 
     }
@@ -152,6 +156,20 @@ public class GameManager : Singleton<GameManager>
         int random = UnityEngine.Random.Range(0, shopcoroutines.Length);
         yield return StartCoroutine(shopcoroutines[random]);
 
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Easy)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageEasy);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Normal)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageNormal);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Hard)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageHard);
+        }
+
         yield return StartCoroutine(NextFloor());
 
     }
@@ -175,6 +193,20 @@ public class GameManager : Singleton<GameManager>
         int random = UnityEngine.Random.Range(0, eventcoroutines.Length);
         yield return StartCoroutine(eventcoroutines[random]);
 
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Easy)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageEasy);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Normal)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageNormal);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Hard)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageHard);
+        }
+
         yield return StartCoroutine(NextFloor());
 
     }
@@ -191,6 +223,20 @@ public class GameManager : Singleton<GameManager>
         SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.Treasure);
         yield return StartCoroutine(TreasureManager.Instance.RandomItem());
 
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Easy)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageEasy);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Normal)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageNormal);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Hard)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageHard);
+        }
+
         yield return StartCoroutine(NextFloor());
 
     }
@@ -206,6 +252,20 @@ public class GameManager : Singleton<GameManager>
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.Rest);
         yield return StartCoroutine(RestManager.Instance.Rest());
+
+        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
+        if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Easy)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageEasy);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Normal)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageNormal);
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == (int)TitleManager.enumDifficultyID.Hard)
+        {
+            SoundManager.Instance.PlayBGM((int)SoundManager.enumBgmNumber.StageHard);
+        }
 
         yield return StartCoroutine(NextFloor());
 
