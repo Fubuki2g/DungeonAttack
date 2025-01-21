@@ -1829,13 +1829,13 @@ MonoBehaviour:
   playerStatusManager: {fileID: 11400000, guid: d4e3ab8b71f1e814eb846be49e91fc34, type: 2}
   playerName: 
   playerLv: 1
-  playerHP: 30
-  playerMaxHP: 30
+  playerHP: 0
+  playerMaxHP: 0
   playerSP: 0
   playerMaxSP: 0
-  playerATK: 5
+  playerATK: 0
   playerEXP: 0
-  playerNextLvEXP: 10
+  playerNextLvEXP: 0
   skillSlot: 
   enemyName: 
   enemyLv: 0
@@ -1845,6 +1845,8 @@ MonoBehaviour:
   enemyEXP: 0
   baseAttack: 0
   powerUp: 0
+  poison: 0
+  poisonDrain: 0
   bossBattle: 0
   floorBackImage: {fileID: 1970361055}
   floorBackSprite: {fileID: 21300000, guid: 03d472cd8667cf8499c2f5f25c8a4171, type: 3}

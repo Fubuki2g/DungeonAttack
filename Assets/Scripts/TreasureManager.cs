@@ -20,6 +20,7 @@ public class TreasureManager : Singleton<TreasureManager>
     {
         NotOpenTreasure, // 宝箱未開封背景
         OpenTreasure, // 宝箱開封背景
+        None, // 非表示用
         Num // フロア背景数
     }
     public int[] getItemNumber; // アイテムの番号
@@ -52,6 +53,7 @@ public class TreasureManager : Singleton<TreasureManager>
         floorImage = GameObject.Find("FloorImage").GetComponent<Image>();
         floorSprite[(int)enumFloorSprite.NotOpenTreasure] = Resources.Load<Sprite>("Images/FloorBacks/NotOpenTreasure");
         floorSprite[(int)enumFloorSprite.OpenTreasure] = Resources.Load<Sprite>("Images/FloorBacks/OpenTreasure");
+        floorSprite[(int)enumFloorSprite.None] = Resources.Load<Sprite>("Images/Enemys/Unknown");
 
         // データリストからの読み込み
         getItemNumber[(int)enumGetItemNumber.Healherb] = itemValueManager.DataList[3].itemID;
@@ -145,6 +147,7 @@ public class TreasureManager : Singleton<TreasureManager>
 
         yield return StartCoroutine(NextProcess(1.0f));
 
+        floorImage.sprite = floorSprite[(int)enumFloorSprite.None];
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         SoundManager.Instance.StopBGM();
     }

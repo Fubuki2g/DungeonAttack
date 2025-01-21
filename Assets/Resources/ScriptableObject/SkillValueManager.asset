@@ -26,17 +26,17 @@ MonoBehaviour:
     needSkillValue: 3
     skillValue: 10
   - skillName: "\u30A2\u30A4\u30B9\u30E9\u30F3\u30B9"
-    needSkillValue: 7
-    skillValue: 30
+    needSkillValue: 5
+    skillValue: 20
   - skillName: "\u30D2\u30FC\u30EB"
-    needSkillValue: 10
-    skillValue: 30
+    needSkillValue: 7
+    skillValue: 20
   - skillName: "\u30DD\u30A4\u30BA\u30F3\u30CA\u30A4\u30D5"
     needSkillValue: 2
     skillValue: 5
   - skillName: "\u30DD\u30A4\u30BA\u30F3\u30D0\u30FC\u30F3"
     needSkillValue: 3
-    skillValue: 30
+    skillValue: 20
   - skillName: "\u30DD\u30A4\u30BA\u30F3\u30C9\u30EC\u30A4\u30F3"
-    needSkillValue: 10
+    needSkillValue: 7
     skillValue: 0

@@ -106,15 +106,15 @@ public class SkillManager : Singleton<SkillManager>
                 GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
                 if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill1].gameObject)
                 {
-                    mainText.text = "パワーアタック:SP2\n強い力を込めて相手に\n攻撃力の1.5倍のダメージ";
+                    mainText.text = $"パワーアタック:SP{skillValueManager.DataList[0].needSkillValue}\n強い力を込めて相手に\n攻撃力の{skillValueManager.DataList[0].skillValue}倍のダメージ";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill2].gameObject)
                 {
-                    mainText.text = "パワーチャージ:SP3\n力をためて次の攻撃が２倍";
+                    mainText.text = $"パワーチャージ:SP{skillValueManager.DataList[1].needSkillValue}\n力をためて次の攻撃が２倍";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill3].gameObject)
                 {
-                    mainText.text = "瞑想:SP10\n心を静めて瞑想する\nHPを50回復";
+                    mainText.text = $"瞑想:SP{skillValueManager.DataList[2].needSkillValue}\n心を静めて瞑想する\nHPを{skillValueManager.DataList[2].skillValue}回復";
                 }
                 else if (BattleManager.Instance.defaultButton[(int)BattleManager.enumDefaultButton.SkillBackButton])
                 {
@@ -126,15 +126,15 @@ public class SkillManager : Singleton<SkillManager>
                 GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
                 if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill1].gameObject)
                 {
-                    mainText.text = "ファイアボール:SP3\n炎の球を相手に放つ\n15の固定ダメージ";
+                    mainText.text = $"ファイアボール:SP{skillValueManager.DataList[3].needSkillValue}\n炎の球を相手に放つ\n{skillValueManager.DataList[3].skillValue}のダメージ";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill2].gameObject)
                 {
-                    mainText.text = "アイスランス:SP7\n氷の槍を相手に放つ\n30の固定ダメージ";
+                    mainText.text = $"アイスランス:SP{skillValueManager.DataList[4].needSkillValue}\n氷の槍を相手に放つ\n{skillValueManager.DataList[4].skillValue}のダメージ";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill3].gameObject)
                 {
-                    mainText.text = "ヒール:SP10\n癒しの呪文を唱える\nHPを30回復";
+                    mainText.text = $"ヒール:SP{skillValueManager.DataList[5].needSkillValue}\n癒しの呪文を唱える\nHPを{skillValueManager.DataList[5].skillValue}回復";
                 }
                 else if (BattleManager.Instance.defaultButton[(int)BattleManager.enumDefaultButton.SkillBackButton])
                 {
@@ -146,15 +146,15 @@ public class SkillManager : Singleton<SkillManager>
                 GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
                 if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill1].gameObject)
                 {
-                    mainText.text = "ポイズンナイフ:SP2\n敵を確率で毒状態にする\n5の固定ダメージ";
+                    mainText.text = $"ポイズンナイフ:SP{skillValueManager.DataList[6].needSkillValue}\n敵を確率で毒状態にする\n{skillValueManager.DataList[6].skillValue}のダメージ";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill2].gameObject)
                 {
-                    mainText.text = "ポイズンバーン:SP3\n毒状態の敵に大ダメージ\n30の固定ダメージ";
+                    mainText.text = $"ポイズンバーン:SP{skillValueManager.DataList[7].needSkillValue}\n毒状態の敵に大ダメージ\n{skillValueManager.DataList[7].skillValue}のダメージ";
                 }
                 else if (selectedObject != null && selectedObject == useSkillButton[(int)enumSkillButton.Skill3].gameObject)
                 {
-                    mainText.text = "ポイズンドレイン:SP10\n敵の毒ダメージで回復する";
+                    mainText.text = $"ポイズンドレイン:SP{skillValueManager.DataList[8].needSkillValue}\n敵の毒ダメージで回復する";
                 }
                 else if (BattleManager.Instance.defaultButton[(int)BattleManager.enumDefaultButton.SkillBackButton])
                 {

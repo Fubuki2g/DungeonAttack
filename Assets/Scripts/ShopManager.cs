@@ -21,6 +21,7 @@ public class ShopManager : Singleton<ShopManager>
         HPPotion, // HPポーション
         SPPotion, // SPポーション
         ATKPotion, // 攻撃ポーション
+        None, // 非表示用
         Num // 背景数
     }
     public int[] getItemNumber;
@@ -50,6 +51,7 @@ public class ShopManager : Singleton<ShopManager>
         floorSprite[(int)enumFloorSprite.HPPotion] = Resources.Load<Sprite>("Images/FloorBacks/HPPotion");
         floorSprite[(int)enumFloorSprite.SPPotion] = Resources.Load<Sprite>("Images/FloorBacks/SPPotion");
         floorSprite[(int)enumFloorSprite.ATKPotion] = Resources.Load<Sprite>("Images/FloorBacks/ATKPotion");
+        floorSprite[(int)enumFloorSprite.None] = Resources.Load<Sprite>("Images/Enemys/Unknown");
 
         // データリストからのアイテムIDの読み込み
         getItemNumber[(int)enumGetItemNumber.HPPotion] = itemValueManager.DataList[0].itemID;
@@ -183,6 +185,7 @@ public class ShopManager : Singleton<ShopManager>
 
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         SoundManager.Instance.StopBGM();
+        floorImage.sprite = floorSprite[(int)enumFloorSprite.None];
     }
 
     // コルーチン内で次の処理に移動する際のディレイの設定

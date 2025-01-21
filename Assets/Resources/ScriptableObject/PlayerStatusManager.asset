@@ -18,16 +18,19 @@ MonoBehaviour:
     pHP: 30
     pSP: 0
     pATK: 5
+    pEXP: 10
     skillSlot: 000000000100000002000000
   - pNAME: "\u9B54\u6CD5\u4F7F\u3044"
     pLv: 1
     pHP: 15
     pSP: 15
     pATK: 1
+    pEXP: 10
     skillSlot: 030000000400000005000000
   - pNAME: "\u30B7\u30FC\u30D5"
     pLv: 1
     pHP: 25
     pSP: 5
     pATK: 3
+    pEXP: 15
     skillSlot: 060000000700000008000000

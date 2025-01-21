@@ -15,6 +15,7 @@ public class EventManager : Singleton<EventManager>
         Fountain, // 泉イベント
         Magic, // 魔法使いイベント
         Muscle, // 筋肉イベント
+        None, // 非表示用
         Num // 背景数
     }
 
@@ -30,6 +31,7 @@ public class EventManager : Singleton<EventManager>
         floorSprite[(int)enumFloorSprite.Fountain] = Resources.Load<Sprite>("Images/FloorBacks/Fountain");
         floorSprite[(int)enumFloorSprite.Magic] = Resources.Load<Sprite>("Images/FloorBacks/Magic");
         floorSprite[(int)enumFloorSprite.Muscle] = Resources.Load<Sprite>("Images/FloorBacks/Muscle");
+        floorSprite[(int)enumFloorSprite.None] = Resources.Load<Sprite>("Images/Enemys/Unknown");
     }
 
     // 奇跡の泉イベント
@@ -91,6 +93,7 @@ public class EventManager : Singleton<EventManager>
         }
 
         mainText.text = "あなたは泉を後にした";
+        floorImage.sprite = floorSprite[(int)enumFloorSprite.None];
 
         yield return StartCoroutine(NextProcess(1.0f));
 
@@ -134,6 +137,8 @@ public class EventManager : Singleton<EventManager>
             BattleManager.Instance.playerSP += 10;
 
             yield return StartCoroutine(NextProcess(1.0f));
+
+            SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         }
         else
         {
@@ -168,6 +173,7 @@ public class EventManager : Singleton<EventManager>
 
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         mainText.text = "魔法使いは霧のように消えた";
+        floorImage.sprite = floorSprite[(int)enumFloorSprite.None];
 
         yield return StartCoroutine(NextProcess(1.0f));
 
@@ -234,6 +240,7 @@ public class EventManager : Singleton<EventManager>
         }
 
         mainText.text = "筋肉は去っていった";
+        floorImage.sprite = floorSprite[(int)enumFloorSprite.None];
 
         yield return StartCoroutine(NextProcess(1.0f));
 

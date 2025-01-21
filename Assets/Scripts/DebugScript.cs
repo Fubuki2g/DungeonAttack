@@ -7,6 +7,5 @@ using UnityEngine.EventSystems;
 
 public class DebugScript : Singleton<DebugScript>
 {
-    public bool Fighter;
-    public bool Magician;
+    
 }

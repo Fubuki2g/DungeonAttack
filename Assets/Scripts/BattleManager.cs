@@ -213,6 +213,7 @@ public class BattleManager: Singleton<BattleManager>
         playerSP = playerStatusManager.DataList[baseCharacterStatus].pSP;
         playerMaxSP = playerStatusManager.DataList[baseCharacterStatus].pSP;
         playerATK = playerStatusManager.DataList[baseCharacterStatus].pATK;
+        playerNextLvEXP = playerStatusManager.DataList[baseCharacterStatus].pEXP;
         skillSlot[0] = playerStatusManager.DataList[baseCharacterStatus].skillSlot[0];
         skillSlot[1] = playerStatusManager.DataList[baseCharacterStatus].skillSlot[1];
         skillSlot[2] = playerStatusManager.DataList[baseCharacterStatus].skillSlot[2];
@@ -504,8 +505,10 @@ public class BattleManager: Singleton<BattleManager>
 
         if (powerUp)
         {
+            yield return StartCoroutine(NextProcess(1.0f));
             powerUp = false;
             playerATK = baseAttack;
+            mainText.text = $"çUåÇóÕÇ™å≥Ç…ñﬂÇ¡ÇΩ";
         }
 
         yield return StartCoroutine(NextProcess(1.0f));
@@ -610,9 +613,6 @@ public class BattleManager: Singleton<BattleManager>
             yield return StartCoroutine(SkillManager.Instance.UseSkill());
         }
 
-        yield return StartCoroutine(NextProcess(1.0f));
-
-        SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         yield return StartCoroutine(EnemyAttack());
 
         yield return StartCoroutine(Battle());
@@ -758,7 +758,9 @@ public class BattleManager: Singleton<BattleManager>
             {
                 playerLv += 1;
                 playerMaxHP += 10;
+                playerHP += 10;
                 playerMaxSP += 3;
+                playerSP += 3;
                 playerATK += 3;
                 playerEXP = 0;
                 playerNextLvEXP *= 2;
@@ -768,12 +770,12 @@ public class BattleManager: Singleton<BattleManager>
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill1].SetActive(true);
                 }
 
-                if (playerLv >= 4)
+                if (playerLv >= 3)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
                 }
 
-                if (playerLv >= 6)
+                if (playerLv >= 5)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
                 }
@@ -782,17 +784,19 @@ public class BattleManager: Singleton<BattleManager>
             {
                 playerLv += 1;
                 playerMaxHP += 5;
+                playerHP += 5;
                 playerMaxSP += 10;
+                playerSP += 10;
                 playerATK += 1;
                 playerEXP = 0;
                 playerNextLvEXP *= 2;
 
-                if (playerLv >= 4)
+                if (playerLv >= 3)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
                 }
 
-                if (playerLv >= 6)
+                if (playerLv >= 5)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
                 }
@@ -801,17 +805,19 @@ public class BattleManager: Singleton<BattleManager>
             {
                 playerLv += 1;
                 playerMaxHP += 5;
+                playerHP += 5;
                 playerMaxSP += 5;
+                playerSP += 5;
                 playerATK += 2;
                 playerEXP = 0;
                 playerNextLvEXP *= 2;
 
-                if (playerLv >= 4)
+                if (playerLv >= 3)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill2].SetActive(true);
                 }
 
-                if (playerLv >= 6)
+                if (playerLv >= 5)
                 {
                     SkillManager.Instance.useSkillButton[(int)SkillManager.enumSkillButton.Skill3].SetActive(true);
                 }

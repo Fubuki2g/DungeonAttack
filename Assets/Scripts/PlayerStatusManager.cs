@@ -10,6 +10,7 @@ public class PlayerData
     public int pHP; // プレイヤーHP
     public int pSP; // プレイヤーSP
     public int pATK; // プレイヤー攻撃力
+    public int pEXP; // プレイヤーのレベルアップに必要な経験値
     public int[] skillSlot; // 使用可能スキル
 }
 
