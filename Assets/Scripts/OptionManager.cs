@@ -39,7 +39,7 @@ public class OptionManager : MonoBehaviour
     {
         // Escapeキーが押されたときにポーズ画面を開き、ゲームを一時停止
         // ポーズ画面表示時はポーズ画面を閉じてゲーム再開
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Pause);
             if (!option)
