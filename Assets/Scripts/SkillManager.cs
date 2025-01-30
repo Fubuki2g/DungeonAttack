@@ -495,7 +495,7 @@ public class SkillManager : Singleton<SkillManager>
         yield return StartCoroutine(NextProcess(1.0f));
 
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.PowerAttack);
-        FlashManager.Instance.EnemyFlash(Color.red, 0.3f);
+        FlashManager.Instance.EnemyFlash(Color.green, 0.3f);
         mainText.text = $"{skillValueManager.DataList[6].skillValue}のダメージ！";
 
         BattleManager.Instance.playerSP -= skillValueManager.DataList[6].needSkillValue;

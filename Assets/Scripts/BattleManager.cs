@@ -38,6 +38,7 @@ public class BattleManager: Singleton<BattleManager>
     public int baseAttack; // 攻撃力上昇時の元の攻撃力
     public bool powerUp; // 攻撃力上昇状態を表す
     public bool poison; // 毒状態かを表す
+    public GameObject poisonImage; // 毒状態を示す画像
     public bool poisonDrain; // ポイズンドレイン使用中かどうか
 
     public bool bossBattle; // 現在がボスバトルかどうか
@@ -151,6 +152,8 @@ public class BattleManager: Singleton<BattleManager>
         displayEnemyImage = GameObject.Find("EnemyImage").GetComponent<Image>();
         noneEnemy = Resources.Load<Sprite>("Images/Enemys/Unknown");
 
+        poisonImage = GameObject.Find("poisonImage");
+
         // メインテキストのUIオブジェクト読み込み
         mainText = GameObject.Find("MainText").GetComponent<TextMeshProUGUI>();
 
@@ -204,6 +207,8 @@ public class BattleManager: Singleton<BattleManager>
         windows[(int)enumWindows.ComandWindow].SetActive(false);
         windows[(int)enumWindows.ItemUseSelect].SetActive(false);
 
+        poisonImage.SetActive(false);
+
         // プレイヤーのステータス初期化
         int baseCharacterStatus = PlayerPrefs.GetInt("Character");
         playerName = playerStatusManager.DataList[baseCharacterStatus].pNAME;
@@ -237,6 +242,15 @@ public class BattleManager: Singleton<BattleManager>
         enemyStatusText[(int)enumEnemyStatusText.HP].text = enemyHP.ToString();
         enemyStatusText[(int)enumEnemyStatusText.MaxHP].text = enemyMaxHP.ToString();
         enemyStatusText[(int)enumEnemyStatusText.ATK].text = enemyATK.ToString();
+
+        if (poison)
+        {
+            poisonImage.SetActive(true);
+        }
+        else
+        {
+            poisonImage.SetActive(false);
+        }
 
     }
 
@@ -721,6 +735,7 @@ public class BattleManager: Singleton<BattleManager>
 
         yield return StartCoroutine(NextProcess(1.0f));
 
+        poison = false;
         SoundManager.Instance.PlaySE((int)SoundManager.enumSENumber.Select);
         Initiate.Fade("GameOverScene", Color.black, 1.0f);
         yield return new WaitForSeconds(5.0f);
@@ -738,6 +753,7 @@ public class BattleManager: Singleton<BattleManager>
             playerATK = baseAttack;
         }
 
+        poison = false;
         displayEnemyImage.sprite = noneEnemy;
         mainText.text = $"{playerName}の勝利！";
 
